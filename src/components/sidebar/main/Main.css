@@ -1,3 +1,4 @@
+/* Base styles for all devices */
 .main {
     flex: 1;
     min-height: 100vh;
@@ -104,7 +105,6 @@
     outline: none;
     padding: 8px;
     font-size: 18px;
-
 }
 
 .search-box div {
@@ -141,36 +141,91 @@
     width: 40px;
     border-radius: 50%;
 }
-.result-data{
+
+.result-data {
     display: flex;
     align-items: start;
     gap: 20px;
 }
-.loader{
+
+.loader {
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.loader hr{
+
+.loader hr {
     border-radius: 4px;
     border: none;
     background-color: #f6f7f8;
-    background: linear-gradient(to right,#9ed7ff,#ffffff,#9ed7ff );
+    background: linear-gradient(to right, #9ed7ff, #ffffff, #9ed7ff);
     background-size: 800px 50px;
     height: 20px;
     animation: loader 3s infinite linear;
 }
-@keyframes loader{
-    0%{
+
+@keyframes loader {
+    0% {
         background-position: -800px 0px;
     }
-    100%{
+    100% {
         background-position: 800px 0px;
     }
 }
-.result-data p{
+
+.result-data p {
     font-size: 17px;
     font-weight: 300;
     line-height: 1.8;
+}
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .main .greet {
+        font-size: 48px;
+    }
+}
+
+@media (max-width: 992px) {
+    .main .greet {
+        font-size: 40px;
+    }
+    .main .cards {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .main .nav {
+        font-size: 18px;
+    }
+    .main .greet {
+        font-size: 32px;
+    }
+    .search-box {
+        flex-direction: column;
+        gap: 10px;
+    }
+    .search-box input {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .main .greet {
+        font-size: 28px;
+    }
+    .main .cards {
+        grid-template-columns: 1fr;
+    }
+    .main .card {
+        height: auto;
+    }
+    .search-box {
+        padding: 10px;
+    }
+    .search-box input {
+        font-size: 14px;
+    }
 }
